@@ -1,0 +1,200 @@
+<!--<form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Departure Date</label>
+        <input type="date" class="form-control">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">Departure City</label>
+        <select id="inputState" class="form-control">
+          <option selected>Choose...</option>
+          <option>Kolkata</option>
+          <option>Chennai</option>
+          <option>Bangalore</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group col-md-4">
+        <label for="inputState">Arrival City</label>
+        <select id="inputState" class="form-control">
+          <option selected>Choose...</option>
+          <option>Kolkata</option>
+          <option>Chennai</option>
+          <option>Bangalore</option>
+        </select>
+      </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputState">Passenger Type</label>
+          <select id="inputState" class="form-control">
+            <option selected>Choose...</option>
+            <option>Economy</option>
+            <option>Premier Economy</option>
+            <option>Business</option>
+          </select>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputState">Number of Passenger</label>
+            <select id="inputState" class="form-control">
+              <option selected>Choose...</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+      </div>
+    
+    <button type="submit" class="btn btn-primary">Search for Flight</button>
+  </form>-->
+ <!-- <form>
+    <div class="form-row">
+    <div ng-controller="myController"> 
+      Search by Origin : <input type="text" [(ngModel)]="origin" (input) = "Search()"  placeholder="Departure City"/>
+      Search by Destiny : <input type="text" [(ngModel)]="destination" (input) = "Search1()"  placeholder="Arrival City"/>
+      <br/>
+      Search by Departure Date<input type="date" [(ngModel)]="departureDate" (input) = "Search2()"  placeholder="Departure Date">
+      <br /><br />
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">FlightNo</th>
+        <th scope="col">Origin</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Departure Terminal</th>
+        <th scope="col">Arrival Terminal</th>
+        <th scope="col">Date</th>
+        <th scope="col">Flight Distance</th>
+        <th scope="col">Flight Duration</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Passenger Type</th>
+        <th scope="col">Number of Passenger</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let flight of listContact">
+       <td>{{flight.flightNo}}</td>
+        <td>{{flight.origin | uppercase}}</td>
+        <td>{{flight.destination | uppercase}}</td>
+        <td>{{flight.departureTerminal}}</td>
+        <td>{{flight.arrivalTerminal}}</td>
+        <td>{{flight.departureDate }}</td>
+        <td>{{flight.flightDistance}}</td>
+        <td>{{flight.flightDuration}}</td>
+        <td>{{flight.amount | number}}</td>
+        <td>{{flight.passengerType}}</td>
+        <td>{{flight.passengerNo}}</td>
+
+      </tr>
+    </tbody>
+
+  </table>
+</div>
+</div>
+  </form> -->
+
+
+
+
+
+  <form #loginform="ngForm" (ngSubmit)="trySearch(loginform.value)">
+    <div class="card mt-5" style="margin:auto;width: 600px;">
+        <div class="card-body">
+            <h5 class="card-title" style="float:initial">SEARCH FLIGHTS</h5>
+            <div class="form-group">
+              <label for="departuredate">Departure Date</label>
+              <input type="date" class="form-control" id="departuredate" placeholder="Departure Date" name="departuredate" ngModel>
+            </div>
+            <div class="form-group"> 
+              <label for="departurecity">Departure City</label>
+              <input type="text" class="form-control" id="departurecity" placeholder="eg. CCU, MAA, BOM, DEL, BLR, HYD" name="departurecity" ngModel>
+            </div>
+            <div class="form-group">
+              <label for="arrivalcity">Arrival City</label>
+              <input type="text" class="form-control" id="arrivalcity" placeholder="eg. CCU, MAA, BOM, DEL, BLR, HYD" name="arrivalcity" ngModel>
+            </div>
+            
+            <div class="form-group">
+              <label for="noofPassengers">No. of Passengers</label>
+              <input type="text" class="form-control" id="noofPassengers" placeholder="Total Number of Passengers" name="noofPassengers" ngModel>
+            </div>
+            <button type="submit" class="btn btn-primary">SEARCH</button>
+            &nbsp;&nbsp;
+            <button type="submit" class="btn btn-primary" (click)="this.loginform.reset()">RESET</button>
+        </div>
+    </div>
+  </form>
+<br>
+<br>
+  
+  <style>
+    table,th,td{
+      border-style: solid     
+    }
+
+
+    .card-body {
+      color: burlywood;
+      background-color: rgb(90, 64, 29);
+    }
+
+    .center{
+      color: burlywood;
+      background-color: rgb(90, 64, 29);
+    }
+    
+    table{
+      border-collapse: collapse;
+      width:90%;
+      position: center;
+    }
+    
+    th {
+      height: 50px;
+    }
+
+    td {
+      color: cornsilk;
+    }
+
+    #btn-search{
+      background-color: #4CAF50;
+    }
+
+    .center {
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid
+}
+    </style>
+    
+    <div *ngIf="lstflightdetails">
+      <table class="center">
+        <tr class="active-row">
+          <th><b>Flight Id</b></th>
+          <th><b>Flight Number</b></th>
+          <th><b>Departure City</b></th>
+          <th><b>Departure Date</b></th>
+          <th><b>Arrival City</b></th>
+          <th><b>Total Fare</b></th>
+          <th><b>Available Seats</b></th>
+          <th><b>Action</b></th>
+        </tr>
+        <tr class="active-row" *ngFor="let com of lstflightdetails">
+          <td>{{com.id}}</td>
+          <td>{{com.flightnumber}}</td>
+          <td>{{com.departurecity}}</td>
+          <td>{{com.departuredate | date}}</td>
+          <td>{{com.arrivalcity}}</td>
+          <td>{{com.totalAmount}}</td>
+          <td>{{com.noofPassengers}}</td>
+          <td><button class="btn btn-primary" id="btn-search" [routerLink]="['/book/'+com.id]">Select</button></td>
+        </tr>
+      </table>
+      <br>
+      <br>
+    </div>
+  
+
+

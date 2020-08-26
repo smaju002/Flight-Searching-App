@@ -1,0 +1,43 @@
+
+<style>
+
+.topnav-right{
+  position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: x-large;
+}
+
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">Flight Management System</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <!--<li class="nav-item active">-->
+        <a class="nav-link" *ngIf="loginService.loggedIn()" [routerLink]="['homepage']">Dashboard-page</a>
+      <!--</li>-->
+
+
+      <!--<li class=".navlist-right">-->
+        <a class="topnav-right" *ngIf="!loginService.loggedIn()" [routerLink]="['login']">Login</a>
+        <a class="navbar-brand" style="cursor:pointer" *ngIf="loginService.loggedIn()" routerLink="/book-page" routerLinkActive="active">Bookings</a>
+        <a class="topnav-right" style="cursor:pointer" *ngIf="loginService.loggedIn()" (click)="loginService.logoutUser()">Logout</a> 
+      <!--</li>-->
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<!-- Footer -->
+<footer class="page-footer font-small blue fixed-bottom">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->

@@ -1,0 +1,58 @@
+
+<!--<form #loginform="ngForm" (ngSubmit)="loginUser(loginform.value)" class="container">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Username</label>
+      <input type="text" class="form-control" name="username" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" name="pass" ngModel>
+    </div>
+    <button type="submit" class="btn btn-primary">LogIn</button>-->
+    <!--<a [routerLink]="'../search'">Products</a>>-->
+    <!--<div *ngIf="loginStatus===1">
+        <br>
+        <alert status="success">Congratulations. You have been successfully authenticated!</alert>
+    </div>
+    <div *ngIf="loginStatus===2">
+        <br>
+        <alert status="danger">Danger. You have not been successfully authenticated!</alert>
+    </div>
+  </form>-->
+
+  <style>
+  .container{
+    width: 30%;
+    border-style: solid
+  }
+
+  </style>
+  
+
+  <div class="container">
+    <br>
+    <img src="../../assets/image/dims.jpg" class="img-fluid" alt="Responsive image">
+    <div>
+  <form class="form-signin">
+    <h2 class="h3 mb-3 font-weight-normal">Please sign in</h2>
+    <div class="form-group">
+    <label for="text" class="sr-only">username</label>
+    <input type="text" class="form-control" placeholder="Customer login name" [(ngModel)]="loginUserData.username" name="username" required autofocus>
+    </div>
+    <br>
+    <div class="form-group">
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" class="form-control" placeholder="Password for login" [(ngModel)]="loginUserData.pass" name="pass" required>
+    </div>
+    <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="loginUser()">Login</button>
+  </form>
+  <br>
+</div>
+</div>
+<br>
+
+
+
+
+

@@ -1,0 +1,103 @@
+
+ [
+    {
+        "flightnumber": "IND2112",
+        "departurecity": "CCU",
+        "departuredate": "2020-08-27",
+        "arrivalcity": "MAA",
+        "noofPassengers": "20",
+        "baseFare": "1800",
+        "tax": "400",
+        "totalAmount": "2200",
+        "id": 1
+      },
+      {
+        "flightnumber": "SPJ8765",
+        "departurecity": "CCU",
+        "departuredate": "2020-08-27",
+        "arrivalcity": "BOM",
+        "noofPassengers": "20",
+        "baseFare": "2000",
+        "tax": "500",
+        "totalAmount": "2500",
+        "id": 2
+      },
+      {
+        "flightnumber": "IND2002",
+        "departurecity": "CCU",
+        "departuredate": "2020-08-27",
+        "arrivalcity": "HYD",
+        "noofPassengers": "30",
+        "baseFare": "1800",
+        "tax": "400",
+        "totalAmount": "2200",
+        "id": 3
+      },
+      {
+        "flightnumber": "ETH7666",
+        "departurecity": "HYD",
+        "departuredate": "2020-08-27",
+        "arrivalcity": "CCU",
+        "noofPassengers": "30",
+        "baseFare": "1900",
+        "tax": "500",
+        "totalAmount": "2400",
+        "id": 4
+      },
+      {
+        "flightnumber": "INA9888",
+        "departurecity": "BOM",
+        "departuredate": "2020-08-27",
+        "arrivalcity": "MAA",
+        "noofPassengers": "30",
+        "baseFare": "1800",
+        "tax": "400",
+        "totalAmount": "2200",
+        "id": 5
+      },
+      {
+        "flightnumber": "AMA3455",
+        "departurecity": "CCU",
+        "departuredate": "2020-08-27",
+        "arrivalcity": "MAA",
+        "noofPassengers": "40",
+        "baseFare": "2300",
+        "tax": "500",
+        "totalAmount": "2800",
+        "id": 6
+      },
+      {
+        "flightnumber": "AMA3467",
+        "departurecity": "CCU",
+        "departuredate": "2020-08-28",
+        "arrivalcity": "MAA",
+        "noofPassengers": "60",
+        "baseFare": "2300",
+        "tax": "500",
+        "totalAmount": "2800",
+        "id": 7
+      },
+      {
+        "flightnumber": "INA9889",
+        "departurecity": "BOM",
+        "departuredate": "2020-08-27",
+        "arrivalcity": "MAA",
+        "noofPassengers": "50",
+        "baseFare": "2200",
+        "tax": "600",
+        "totalAmount": "2800",
+        "id": 8
+      },
+      {
+        "flightnumber": "INA9890",
+        "departurecity": "BOM",
+        "departuredate": "2020-08-27",
+        "arrivalcity": "MAA",
+        "noofPassengers": "20",
+        "baseFare": "1500",
+        "tax": "300",
+        "totalAmount": "1800",
+        "id": 9
+      }
+    
+]
