@@ -8,6 +8,10 @@
     font-size: x-large;
 }
 
+.nav-link{
+  font-size: large;
+}
+
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -20,6 +24,7 @@
       <!--<li class="nav-item active">-->
         <a class="nav-link" *ngIf="loginService.loggedIn()" [routerLink]="['homepage']">Dashboard-page</a>
       <!--</li>-->
+      &nbsp;&nbsp;
 
 
       <!--<li class=".navlist-right">-->
