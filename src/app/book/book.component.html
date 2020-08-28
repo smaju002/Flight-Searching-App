@@ -30,6 +30,10 @@ h5 {
   border-bottom: black;
 }
 
+.drop-down{
+  size: x-large;
+}
+
 
 </style>
 
@@ -217,6 +221,13 @@ h5 {
                 <input type="text" class="form-control" id="departuredate" placeholder="Departure Date" name="departuredate"
                   [ngModel]="com.departuredate" readonly>
               </div>
+
+              <div class="form-group">
+                <label for="departuredate">Departure Time</label>
+                <input type="text" class="form-control" placeholder="Departure Time" name="departureTime"
+                  [ngModel]="com.departureTime" readonly>
+              </div>
+
               <div class="form-group">
                 <label for="arrivalcity">Arrival City</label>
                 <input type="text" class="form-control" id="arrivalcity" placeholder="Arrival City" name="arrivalcity"
@@ -251,6 +262,19 @@ h5 {
             <label for="phonenumber">Phone Number</label>
             <input type="text" class="form-control" id="phonenumber" placeholder="eg. Phone Number" name="phonenumber" ngModel>
           </div>
+
+          <br>
+
+          <select class="drop-down">
+            <option value="" disabled="disabled" selected="selected">Gender</option>
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+            <option value="3">Others</option>
+        </select>
+
+        <br>
+        <br>
+
           <div class="form-group">
             <label for="city">City</label>
             <input type="text" class="form-control" id="city" placeholder="Current City" name="city" ngModel>

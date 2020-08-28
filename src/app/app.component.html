@@ -5,17 +5,26 @@
   position: absolute;
     top: 10px;
     right: 10px;
-    font-size: x-large;
+    font-size: large;
 }
 
 .nav-link{
   font-size: large;
 }
 
+.topnav-centered{
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: large;
+}
+
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand">Flight Management System</a>
+  <a class="topnav-centered">Flight Management System</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -28,11 +37,12 @@
 
 
       <!--<li class=".navlist-right">-->
-        <a class="topnav-right" *ngIf="!loginService.loggedIn()" [routerLink]="['login']">Login</a>
+        <a class="topnav-right" *ngIf="!loginService.loggedIn()" [routerLink]="['login']"></a>
         <a class="navbar-brand" style="cursor:pointer" *ngIf="loginService.loggedIn()" routerLink="/book-page" routerLinkActive="active">Bookings</a>
         <a class="topnav-right" style="cursor:pointer" *ngIf="loginService.loggedIn()" (click)="loginService.logoutUser()">Logout</a> 
       <!--</li>-->
     </ul>
+    <br>
   </div>
 </nav>
 <router-outlet></router-outlet>

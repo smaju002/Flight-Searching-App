@@ -1,3 +1,14 @@
+<style>
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+</style>
+
+
+
 <!--<form>
     <div class="form-row">
       <div class="form-group col-md-6">
@@ -114,11 +125,24 @@
               <label for="arrivalcity">Arrival City</label>
               <input type="text" class="form-control" id="arrivalcity" placeholder="eg. CCU, MAA, BOM, DEL, BLR, HYD" name="arrivalcity" ngModel>
             </div>
-            
             <div class="form-group">
               <label for="noofPassengers">No. of Passengers</label>
               <input type="text" class="form-control" id="noofPassengers" placeholder="Total Number of Passengers" name="noofPassengers" ngModel>
             </div>
+
+            <div class="custom-select" style="width:200px;">
+              <select>
+                <option value="0">Passenger Type:</option>
+                <option value="1">E</option>
+                <option value="2">B</option>
+                <option value="3">PE</option>
+            
+              </select>
+            </div>
+
+            <br>
+            <br>
+
             <button type="submit" class="btn btn-primary">SEARCH</button>
             &nbsp;&nbsp;
             <button type="submit" class="btn btn-primary" (click)="this.loginform.reset()">RESET</button>
@@ -176,7 +200,9 @@
           <th><b>Flight Number</b></th>
           <th><b>Departure City</b></th>
           <th><b>Departure Date</b></th>
+          <th><b>Departure Time</b></th>
           <th><b>Arrival City</b></th>
+          <th><b>Arrival Time</b></th>
           <th><b>Total Fare</b></th>
           <th><b>Available Seats</b></th>
           <th><b>Action</b></th>
@@ -186,7 +212,9 @@
           <td>{{com.flightnumber}}</td>
           <td>{{com.departurecity}}</td>
           <td>{{com.departuredate | date}}</td>
+          <td>{{com.departureTime}}</td>
           <td>{{com.arrivalcity}}</td>
+          <td>{{com.arrivalTime}}</td>
           <td>{{com.totalAmount}}</td>
           <td>{{com.noofPassengers}}</td>
           <td><button class="btn btn-primary" id="btn-search" [routerLink]="['/book/'+com.id]">Select</button></td>

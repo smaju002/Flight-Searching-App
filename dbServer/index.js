@@ -112,7 +112,7 @@ const parseReqToSearch = (req) => ({
         arrivalcity: req.body.arrivalcity,
         noofPassengers: req.body.noofPassengers,
         id: req.body.id,
-       // totalAmount: req.body.totalAmount
+        totalAmount: req.body.totalAmount
 
        
     }
@@ -247,10 +247,10 @@ libServer.post('/book-page', (req, resp) => {
     x.noofPassengers>= search.noofPassengers);
     console.log("Response")
     console.log(result);
-    /*const sortByFare = result.sort(function(a,b){
+    const sortByFare = result.sort(function(a,b){
           return a.totalAmount - b.totalAmount
     })
-    console.log(sortByFare);*/
+    console.log(sortByFare);
 resp.send(result);
 if(flightData.filter(x=>x.departurecity == search.departurecity && 
 x.departuredate == search.departuredate && x.arrivalcity == search.arrivalcity/*&&
